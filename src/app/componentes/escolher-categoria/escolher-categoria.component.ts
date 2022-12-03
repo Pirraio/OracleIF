@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIMensagensService } from '../../model/api-mensagens.service';
 
 @Component({
   selector: 'app-escolher-categoria',
@@ -11,5 +12,8 @@ export class EscolherCategoriaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  piada():void {
+    console.log('Hello World')
+    
+  }
 }
