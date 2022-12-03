@@ -7,13 +7,18 @@ import { APIMensagensService } from '../../model/api-mensagens.service';
   styleUrls: ['./escolher-categoria.component.css']
 })
 export class EscolherCategoriaComponent implements OnInit {
-
-  constructor() { }
+  piada: string
+  constructor(private pi: APIMensagensService) {
+    this.piada = ''
+  }
 
   ngOnInit(): void {
   }
-  piada():void {
-    console.log('Hello World')
+  mostrarPiada() {
+    this.piada = "Haha piada"
+    this.pi.contarPiada(this.piada) 
     
+    
+
   }
 }
