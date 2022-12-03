@@ -18,33 +18,15 @@ body {
 }
 
 .contentbox {
-    border-left: 1px solid #d3d3d3;
-    border-right: 1px solid #d3d3d3;
+    border-left: 3px solid #58038a;
+    border-right: 3px solid #58038a;
     margin: auto;
     width: 80%;
-    height: 100vh;
     background-color: aliceblue;
 }
 
 .messagebox {
     padding: 10em;
-    border-bottom: navy 3px solid;
     height: 10em;
 }
 
-.categoria {
-    display: flex;
-    justify-content: center;
-}
-
-.btn {
-    padding: 20px;
-    border-radius: 30px;
-    margin: 10px;
-    background-color: beige;
-}
-
-.btn:hover {
-    background-color: gray;
-    color: white;
-}
