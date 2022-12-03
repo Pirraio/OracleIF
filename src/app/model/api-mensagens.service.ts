@@ -5,5 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class APIMensagensService {
 
-  constructor() { }
+  constructor() { 
+
+  }
+  mostrarPiada():string {
+    return 'Quer ouvir um π-ada? HAHAHAHA'
+  }
 }
