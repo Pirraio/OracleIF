@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,12 @@
     <title>Oracle IF</title>
 </head>
 <body>
-    <div class="contentbox">
-        <div class="categoria">
-            <button id="piada" class="btn" (click)="mostrarPiada()">Me conte uma piada.</button>
-            <button id="fato" class="btn">Quero saber um fato interessante.</button>
-            <button id="cantada" class="btn">Fala uma cantada.</button>
-            <p>{{piada}}</p>
-        </div>
-    </div>
+   
 </body>
-</html>
+</html>-->
+
+<div class="contentbox">
+    <div *ngFor="let c of categorias">
+        <button class="btn btn-primary">{{ c.nome_categoria }}</button>
+    </div>
+</div>

@@ -14,9 +14,9 @@ export class VisualizarMensagemComponent implements OnInit {
     ngOnInit(): void {
       
   }
-  contarPiada() {
+  /*contarPiada() {
     this.piada = 'piada'
     this.pi.contarPiada(this.piada)
-  }
+  }*/
 }
 
