@@ -13,6 +13,13 @@
 
 <div class="contentbox">
     <div *ngFor="let c of categorias">
-        <button class="btn btn-primary">{{ c.nome_categoria }}</button>
+        <button
+            [value]="c.id"
+            type="button"
+            class="btn btn-primary"
+            #idCat (click)="salvarCategoriaEscolhida(+idCat.value)"
+        >
+            {{ c.nome_categoria }}
+        </button>
     </div>
 </div>
