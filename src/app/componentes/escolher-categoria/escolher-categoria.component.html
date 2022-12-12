@@ -12,7 +12,9 @@
 </html>-->
 
 <div class="contentbox">
-    <div *ngFor="let c of categorias">
-        <button class="btn btn-primary">{{ c.nome_categoria }}</button>
+    <div class="categoria">
+        <div *ngFor="let c of categorias">
+            <button class="btn">{{ c.nome_categoria }}</button>
+        </div>
     </div>
 </div>

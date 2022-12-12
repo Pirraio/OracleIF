@@ -1,31 +1,32 @@
-body {
-    background-color: #B02CB8;
-}
 .categoria {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    border-top: 3px solid #58038a;
-    border-bottom: 3px solid #58038a;
-    padding: 50px;
+    padding: 1rem;
+    
 }
 
 .btn {
+    font-family: 'Mystery Quest', monospace;
+    font-size: 32pxg;
     padding: 20px;
     border-radius: 30px;
     margin: 10px;
-    background-color: beige;
+    background-color: #B1BDCD;
     transition: 314ms;
 }
 
 .btn:hover {
-    background-color: gray;
+    background-color: #5B7290;
     color: white;
 }
 
+.btn:active {
+    color: #ae1816;
+}
+
 .contentbox {
-    border-left: 3px solid #58038a;
-    border-right: 3px solid #58038a;
     margin: auto;
     width: 80%;
-    background-color: aliceblue;
+    background-color: #E7EbF0;
 }

@@ -7,7 +7,7 @@ import { Categoria } from './categoria';
   providedIn: 'root'
 })
 export class APIMensagensService {
-  private URL: string = 'http://localhost:3333';
+  private URL: string = 'http://10.209.1.120:3333';
 
   constructor(private http: HttpClient) { }
 
