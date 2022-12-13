@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from 'src/app/model/categoria';
 import { APIMensagensService } from '../../model/api-mensagens.service';
+import { RegistroDadosBotoesService } from 'src/app/model/registro-dados-botoes.service';
 
 @Component({
   selector: 'app-escolher-categoria',
@@ -10,7 +11,8 @@ import { APIMensagensService } from '../../model/api-mensagens.service';
 export class EscolherCategoriaComponent implements OnInit {
   categorias: Categoria[];
 
-  constructor(private api: APIMensagensService) {
+  constructor(private api: APIMensagensService,
+              private reg: RegistroDadosBotoesService) {
     this.categorias = [];
   }
 
@@ -20,9 +22,7 @@ export class EscolherCategoriaComponent implements OnInit {
     });
   }
 
-
-  /*mostrarPiada() {
-    this.piada = "Haha piada"
-    this.pi.contarPiada(this.piada)
-  }*/
+  salvarCategoriaEscolhida(idCat: number): void {
+    this.reg.inserirValorCategoria(idCat);
+  }
 }
