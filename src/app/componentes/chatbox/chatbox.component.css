@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1rem;
+    
     
 }
 
@@ -28,5 +28,10 @@
 .contentbox {
     margin: auto;
     width: 80%;
+    height: 50vh;
     background-color: #E7EbF0;
+}
+
+.view-message {
+    height: 10rem;
 }

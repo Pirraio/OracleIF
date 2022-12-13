@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { APIMensagensService } from 'src/app/model/api-mensagens.service';
 import { Categoria } from 'src/app/model/categoria';
-import { APIMensagensService } from '../../model/api-mensagens.service';
 
 @Component({
-  selector: 'app-escolher-categoria',
-  templateUrl: './escolher-categoria.component.html',
-  styleUrls: ['./escolher-categoria.component.css']
+  selector: 'app-chatbox',
+  templateUrl: './chatbox.component.html',
+  styleUrls: ['./chatbox.component.css']
 })
-export class EscolherCategoriaComponent implements OnInit {
+export class ChatboxComponent implements OnInit {
+
   categorias: Categoria[];
 
   constructor(private api: APIMensagensService) {

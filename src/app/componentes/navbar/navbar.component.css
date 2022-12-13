@@ -13,19 +13,3 @@ nav {
     text-align: center;
     font-size: 32px;
 }
-
-body {
-    background-color: #003366;
-}
-
-.contentbox {
-    margin: auto;
-    width: 80%;
-    background-color: #E7EbF0;
-}
-
-.messagebox {
-    padding: 10em;
-    height: 10em;
-}
-
