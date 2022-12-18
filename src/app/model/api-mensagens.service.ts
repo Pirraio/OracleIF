@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Categoria } from './categoria';
-import { Mensagem } from './mensagem';
 
 
 @Injectable({
@@ -16,7 +15,7 @@ export class APIMensagensService {
   obterCategorias(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(`${this.URL}/categorias`);
   }
-<<<<<<< HEAD
+
   
   obterConselho(): Observable<any> {
     // let id = Math.floor(Math.random() * (4-1)) + 1
@@ -37,11 +36,5 @@ export class APIMensagensService {
   //   let id = Math.floor(Math.random() * (13-10)) + 10
   //   return this.http.get<any>(`${this.URL}/mensagens/${id}`)
   // }
-
-=======
-
-  obterMensagemAleatoriaPorCategoria(idCat: number): Observable<Mensagem> {
-    return this.http.get<Mensagem>(`${this.URL}/mensagens/${idCat}/categoria/aleatorio`);
   }
->>>>>>> main
-}
+
