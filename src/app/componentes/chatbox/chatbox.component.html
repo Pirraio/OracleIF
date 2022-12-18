@@ -1,10 +1,12 @@
 <div class="contentbox">
     <div class="view-message">
-        
+        <div class="message-blue">
+            <p class="message-content">{{mensagem}}</p>
+        </div>
     </div>
     <div class="categoria">
         <div *ngFor="let c of categorias">
-            <button class="btn">{{ c.nome_categoria }}</button>
+            <button class="btn" (click)="mostrarMensagem()">{{ c.nome_categoria }}</button>
         </div>
     </div>
 </div>

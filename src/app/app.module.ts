@@ -3,14 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { VisualizarMensagemComponent } from './componentes/visualizar-mensagem/visualizar-mensagem.component';
-import { EscolherCategoriaComponent } from './componentes/escolher-categoria/escolher-categoria.component';
+import { ChatboxComponent } from './componentes/chatbox/chatbox.component';
+import { FooterComponent } from './componentes/footer/footer.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VisualizarMensagemComponent,
-    EscolherCategoriaComponent
+    ChatboxComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
