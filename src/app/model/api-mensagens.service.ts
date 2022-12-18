@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Categoria } from './categoria';
-
+import { Mensagem } from './mensagem';
 
 @Injectable({
   providedIn: 'root'
 })
 export class APIMensagensService {
-  private URL: string = 'http://localhost:31415';
+  private URL: string = 'http://localhost:3333';
 
   constructor(private http: HttpClient) { }
 
@@ -16,11 +16,14 @@ export class APIMensagensService {
     return this.http.get<Categoria[]>(`${this.URL}/categorias`);
   }
 
-  
-  obterConselho(): Observable<any> {
-    // let id = Math.floor(Math.random() * (4-1)) + 1
-    return this.http.get<any>(`${this.URL}/mensagens/1`)
+  obterMensagemAleatoriaPorCategoria(idCat: number): Observable<Mensagem> {
+    return this.http.get<Mensagem>(`${this.URL}/mensagens/${idCat}/categoria/aleatorio`);
   }
+  
+  // obterConselho(): Observable<any> {
+  //   // let id = Math.floor(Math.random() * (4-1)) + 1
+  //   return this.http.get<any>(`${this.URL}/mensagens/1`)
+  // }
 
   // obterPiada(): Observable<any> {
   //   let id = Math.floor(Math.random() * (7-4)) + 4

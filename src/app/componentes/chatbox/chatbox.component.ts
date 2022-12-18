@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { APIMensagensService } from 'src/app/model/api-mensagens.service';
 import { Categoria } from 'src/app/model/categoria';
-import { Piada } from 'src/app/model/piada';
+import { Mensagem } from 'src/app/model/mensagem';
 
 @Component({
   selector: 'app-chatbox',
@@ -9,12 +9,14 @@ import { Piada } from 'src/app/model/piada';
   styleUrls: ['./chatbox.component.css']
 })
 export class ChatboxComponent implements OnInit {
-  mensagem: string
+  mensagem: Mensagem;
+  texto: string;
   categorias: Categoria[];
 
-  constructor(private api: APIMensagensService, private msg: APIMensagensService) {
+  constructor(private api: APIMensagensService) {
     this.categorias = [];
-    this.mensagem = ''
+    this.mensagem = new Mensagem();
+    this.texto = '';
   }
 
   ngOnInit(): void {
@@ -22,11 +24,11 @@ export class ChatboxComponent implements OnInit {
       this.categorias = res;
     });
   }
-  mostrarMensagem() {
-    this.msg.obterConselho().subscribe((res) => {
-      this.mensagem = 'Mensagem!'
-      console.log(this.mensagem)
-    })
-    
+
+  mostrarMensagem(idCat: number): void {
+    this.api.obterMensagemAleatoriaPorCategoria(idCat).subscribe((res) => {
+      this.mensagem = res;
+      this.texto = this.mensagem.mensagem;
+    });
   }
 }
