@@ -2,8 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-    
 }
 
 .btn {
@@ -49,6 +47,20 @@
     font: 400 .9em 'Open Sans', sans-serif;
     border: 1px solid #97C6E3;
     border-radius: 10px;
+}
+
+.mensagem-topo {
+    padding: 10px;
+    background-color: #8c959b;
+    width: 1000px;
+    height: 70px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.mensagem-topo > p {
+    margin-top: 10px;
 }
 
 .message-blue:after {
