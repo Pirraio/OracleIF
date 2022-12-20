@@ -1,1 +1,28 @@
-<p>editor-mensagem works!</p>
+<!-- Categorias -->
+<div class="container">
+    <div class="for-cat">
+        <div class="cad-nov-cat">
+            <h1>Cadastrar categoria</h1>
+            <form>
+                <label for="cat">Nome da categoria</label>
+                <input type="text" name="cat" id="cat" class="cat" placeholder="Nome da categoria" required>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+
+    <div class="form-msg">
+        <div class="cad-nov-msg">
+            <h1>Cadastrar mensagens</h1>
+            <label for="idcat">Id categoria</label>
+            <select name="idcat" id="idcat">
+                <option *ngFor="let c of categorias" [value]="c.id">{{ c.nome_categoria }}</option>
+            </select>
+            <label for="msg">Mensagem</label>
+            <textarea name="msg" id="msg" cols="30" rows="5" placeholder="Digite a sua mensagem abaixo"></textarea>
+            <label for="ref">Referencia</label>
+            <input type="text" name="ref" id="ref">
+            <input type="submit" value="Cadastrar">
+        </div>
+    </div>
+</div>
