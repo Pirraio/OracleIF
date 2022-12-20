@@ -3,7 +3,7 @@ nav {
     height: 6em;
     background-color: #660F57;
     font-family: 'Mystery Quest', cursive;
-
+    display: flex;
 }
 
 .logo {
@@ -12,4 +12,23 @@ nav {
     height: 100px;
     text-align: center;
     font-size: 32px;
+    flex: 1;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    line-height: 100px;
+    height: 100px;
+    margin-left: 25px;
+    flex: 1;
+}
+
+.links:hover a {
+    text-decoration: underline;
+}
+
+#direita {
+    margin-right: 25px;
 }
