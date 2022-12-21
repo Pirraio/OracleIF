@@ -49,5 +49,10 @@ export class APIMensagensService {
     let urlDel: string = `${this.URL}/mensagens/${idMsg}`;
     return this.http.delete<any>(urlDel);
   }
+
+  verificaUsuario(dadosUsuario: any): Observable<any> {
+    let urlPost: string = `${this.URL}/usuario`;
+    return this.http.post<any>(urlPost, dadosUsuario);
+  }
 }
 

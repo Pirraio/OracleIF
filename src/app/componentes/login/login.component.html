@@ -17,7 +17,10 @@
                    placeholder="Senha"
                    formControlName="senhaUsuario">
             
-            <button type="submit">Login</button>
+            <input type="button"
+                   value="Enviar"
+                   [disabled]="dadosUsuarioForm.invalid"
+                   (click)="fazerLogin(dadosUsuarioForm)">
         </form>
     </div>
 </form>

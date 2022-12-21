@@ -10,6 +10,7 @@ import { APIMensagensService } from 'src/app/model/api-mensagens.service';
 })
 export class LoginComponent implements OnInit {
   dadosUsuarioForm: FormGroup;
+  usuario: [];
 
   constructor(private fb: FormBuilder,
               private api: APIMensagensService,
@@ -19,13 +20,21 @@ export class LoginComponent implements OnInit {
       nomeUsuario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       senhaUsuario: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]]
     });
+    this.usuario = [];
   }
 
   ngOnInit(): void {
     const usuario: string | null = sessionStorage.getItem("nomeUsuario");
-    if (usuario == "" || usuario == null) {
-      
-    }
   }
 
+  fazerLogin(form: FormGroup): void {
+    let formulario = form.value;
+    let nome = formulario.nome;
+    let senha = formulario.senha;
+  }
+
+  deslogar(): void {
+    sessionStorage.setItem("nomeUsuario", "");
+    this.rt.navigate(["/login"]);
+  }
 }
