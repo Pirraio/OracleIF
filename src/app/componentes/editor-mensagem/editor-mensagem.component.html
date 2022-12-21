@@ -1,1 +1,90 @@
-<p>editor-mensagem works!</p>
+<!-- Categorias -->
+<div class="container">
+    <div class="for-cat">
+        <div class="cad-nov-cat">
+            <h1>Cadastrar categoria</h1>
+            <form [formGroup]="categoriaForm">
+                <label for="cat">Nome da categoria</label>
+                <input type="text"
+                       name="cat"
+                       id="cat"
+                       class="cat"
+                       placeholder="Nome da categoria"
+                       required
+                       formControlName="nomeCat"
+                >
+                <input type="button"
+                       value="Cadastrar"
+                       [disabled]="categoriaForm.invalid"
+                       (click)="cadastrarCategoria(categoriaForm)"
+                >
+            </form>
+        </div>
+        <div class="exclur-cat">
+            <h1>Exlcuir categorias</h1>
+            <form [formGroup]="categoriaSelectForm">
+                <label for="cat">Categorias</label>
+                <select name="cat" id="cat" formControlName="idcat">
+                    <option *ngFor="let c of categorias"
+                            [value]="c.id">
+                        {{ c.nome_categoria }}
+                    </option>
+                </select>
+                <input type="button"
+                        value="Excluir"
+                        [disabled]="categoriaSelectForm.invalid"
+                        (click)="excluirCategoria(categoriaSelectForm)">
+            </form>
+        </div>
+    </div>
+
+    <div class="form-msg">
+        <div class="cad-nov-msg">
+            <h1>Cadastrar mensagens</h1>
+            <form [formGroup]="mensagemForm">
+                <label for="idcat">Categoria</label>
+                <select name="idcat" id="idcat" formControlName="cat">
+                    <option *ngFor="let c of categorias" 
+                            [value]="c.id"
+                    >
+                        {{ c.nome_categoria }}
+                    </option>
+                </select>
+                <label for="msg">Mensagem</label>
+                <textarea name="msg"
+                          id="msg"
+                          cols="30"
+                          rows="5"
+                          placeholder="Digite a sua mensagem abaixo"
+                          formControlName="msg">
+                </textarea>
+                <label for="ref">Referencia</label>
+                <input type="text" name="ref" id="ref" formControlName="ref">
+                <input type="button"
+                       value="Cadastrar"
+                       [disabled]="mensagemForm.invalid"
+                       (click)="cadastrarMensagem(mensagemForm)">
+            </form>
+        </div>
+
+        <div class="excluir-msg">
+            <h1>Excluir mensagens</h1>
+            <form [formGroup]="excluirMsgForm">
+                <label for="idcat">Categoria</label>
+                <select name="idcat" id="idcat" formControlName="idCat" (change)="obterMsgCategoria(excluirMsgForm)">
+                    <option *ngFor="let c of categorias" 
+                            [value]="c.id"
+                    >
+                        {{ c.nome_categoria }}
+                    </option>
+                </select>
+                <label for="">Mensagens</label>
+                <select name="msg" id="msg">
+                    <option *ngFor="let msg of msgPorCategoria" [value]="msg.id">
+                        {{ msg.mensagem }}
+                    </option>
+                </select>
+            </form>
+        </div>
+    </div>
+</div>
