@@ -4,7 +4,9 @@
 
 div.container {
     width: 500px;
+    border-radius: 0px 0px 15px 15px ;
     margin: auto;
+    background-color: gray;
 }
 
 label {
