@@ -77,4 +77,10 @@ export class EditorMensagemComponent implements OnInit {
     })
     console.log(this.msgPorCategoria)
   }
+
+  excluirMensagem(form: FormGroup): void {
+    let formulario = form.value;
+    let idMsg = +formulario.idMsg;
+    this.api.excluirMensagem(idMsg).subscribe();
+  }
 }
