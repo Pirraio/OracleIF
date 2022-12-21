@@ -27,7 +27,9 @@ import { EditorMensagemComponent } from './componentes/editor-mensagem/editor-me
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
