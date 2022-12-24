@@ -8,7 +8,7 @@ import { Mensagem } from './mensagem';
   providedIn: 'root'
 })
 export class APIMensagensService {
-  private URL: string = 'http://localhost:3333';
+  private URL: string = 'http://localhost:31415';
 
   constructor(private http: HttpClient) { }
 

@@ -9,7 +9,7 @@
     font-size: 32px;
     padding: 20px;
     border-radius: 30px;
-    margin: 10px;
+    margin: 2rem;
     background-color: #B1BDCD;
     transition: 314ms;
 }
@@ -41,14 +41,14 @@
     /* margin-left: 20px;
     margin-bottom: 10px; */
     margin: 20px auto;
-    padding: 10px;
+    padding: 10px;  
     background-color: #A8DDFD;
     width: 400px;
-    height: 50px;
+    height: 100%;
     text-align: left;
     font: 400 .9em 'Open Sans', sans-serif;
     border: 1px solid #97C6E3;
-    border-radius: 10px;
+    border-radius: 10px;    
 }
 
 .message-content {
