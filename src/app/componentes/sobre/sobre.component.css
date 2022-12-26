@@ -8,6 +8,7 @@ p {
     color: black;
     margin: 1rem;
     text-indent: 1rem;
+    text-align: justify;
 }
 
 .content-box {

@@ -9,7 +9,7 @@ import { Usuario } from './usuario';
   providedIn: 'root'
 })
 export class APIMensagensService {
-  private URL: string = 'http://localhost:31415';
+  private URL: string = 'http://localhost:3333';
 
   constructor(private http: HttpClient) { }
 

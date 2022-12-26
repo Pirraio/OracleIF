@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { APIMensagensService } from 'src/app/model/api-mensagens.service';
 import { Categoria } from 'src/app/model/categoria';
+import { LoginService } from 'src/app/model/login.service';
 import { Mensagem } from 'src/app/model/mensagem';
 
 @Component({
@@ -18,7 +20,9 @@ export class EditorMensagemComponent implements OnInit {
   msgPorCategoria: Mensagem[];
 
   constructor(private api: APIMensagensService,
-              private fb: FormBuilder)
+              private fb: FormBuilder,
+              private login: LoginService,
+              private rt: Router)
   {
     this.categoriaForm = this.fb.group({
       nomeCat: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]]
@@ -39,6 +43,9 @@ export class EditorMensagemComponent implements OnInit {
 
   ngOnInit(): void {
     this.obterTodasCategorias();
+    if (!this.login.permitido) {
+      this.rt.navigate(['/home']);
+    }
   }
 
   obterTodasCategorias(): void {
@@ -82,5 +89,10 @@ export class EditorMensagemComponent implements OnInit {
     let formulario = form.value;
     let idMsg: number = +formulario.idMsg;    
     this.api.excluirMensagem(idMsg).subscribe();
+  }
+
+  sairEdicao(): void {
+    this.login.alterarValor(false);
+    this.rt.navigate(['/home']);
   }
 }

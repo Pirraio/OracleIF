@@ -24,7 +24,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.login.retornarPermissao());
+    this.fazerLogin();
+  }
 
   consultarDados(form: FormGroup): void {
     let formulario = form.value;
@@ -37,7 +40,6 @@ export class LoginComponent implements OnInit {
         this.rt.navigate(['/edicao']);
       }
     });
-    this.fazerLogin();
   }
 
   fazerLogin(): void {
