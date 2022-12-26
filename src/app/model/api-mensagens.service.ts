@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Categoria } from './categoria';
 import { Mensagem } from './mensagem';
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,9 @@ export class APIMensagensService {
     let urlDel: string = `${this.URL}/mensagens/${idMsg}`;
     return this.http.delete<any>(urlDel);
   }
-}
 
+  fazerLogin(user: Usuario): Observable<any> {
+    let urlPost: string = `${this.URL}/usuario`
+    return this.http.post<any>(urlPost, user)
+  }
+}

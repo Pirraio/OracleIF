@@ -85,11 +85,11 @@
                         {{ msg.mensagem }}
                     </option>
                 </select>
-                
                 <input type="button"
                        value="Excluir"
-                       [disabled]="excluirMsgForm.invalid"
-                       (click)="excluirMensagem(excluirMsgForm)">
+                       [disabled]="excluirMsgForm.disabled"
+                       (click)="excluirMsg(excluirMsgForm)"
+                >
             </form>
         </div>
     </div>
