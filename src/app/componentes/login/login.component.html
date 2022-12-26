@@ -1,9 +1,26 @@
 <form action="">
     <div class="container">
-        <label for="usuario"><strong>Usuário</strong></label>
-        <input type="text" name="usuario" id="usuario" required placeholder="Usuario">
-        <label for="senha"><strong>Senha</strong></label>
-        <input type="password" name="senha" id="senha" required placeholder="Senha">
-        <button type="submit">Login</button>
+        <form action="" [formGroup]="infosUser">
+            <label for="usuario"><strong>Usuário</strong></label>
+            <input type="text"
+                   name="usuario"
+                   id="usuario"
+                   required placeholder="Usuario"
+                   formControlName="usuario"
+            >
+            
+            <label for="senha"><strong>Senha</strong></label>
+            <input type="password"
+                   name="senha"
+                   id="senha"
+                   required placeholder="Senha"
+                   formControlName="senha"
+            >
+            <input type="button"
+                   value="Entrar"
+                   [disabled]="infosUser.invalid"
+                   (click)="consultarDados(infosUser)"
+            >
+        </form>
     </div>
 </form>

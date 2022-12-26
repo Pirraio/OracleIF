@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Categoria } from './categoria';
 import { Mensagem } from './mensagem';
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -45,26 +46,13 @@ export class APIMensagensService {
     return this.http.get<Mensagem>(urlGet);
   }
 
-  excluirMensagem() {}
-
-  // obterConselho(): Observable<any> {
-  //   // let id = Math.floor(Math.random() * (4-1)) + 1
-  //   return this.http.get<any>(`${this.URL}/mensagens/1`)
-  // }
-
-  // obterPiada(): Observable<any> {
-  //   let id = Math.floor(Math.random() * (7-4)) + 4
-  //   return this.http.get<any>(`${this.URL}/mensagens/${id}`)
-  // }
-
-  // obterFatoAleatorio(): Observable<any> {
-  //   let id = Math.floor(Math.random() * (10-7)) + 7
-  //   return this.http.get<any>(`${this.URL}/mensagens/${id}`)
-  // }
-
-  // obterCantada(): Observable<any> {
-  //   let id = Math.floor(Math.random() * (13-10)) + 10
-  //   return this.http.get<any>(`${this.URL}/mensagens/${id}`)
-  // }
+  excluirMensagem(idMsg: number): Observable<any> {
+    let urlDel: string = `${this.URL}/mensagens/${idMsg}`;
+    return this.http.delete<any>(urlDel);
   }
 
+  fazerLogin(usuario: Usuario): Observable<any> {
+    let urlPost: string = `${this.URL}/usuario`;
+    return this.http.post<any>(urlPost, usuario);
+  }
+}

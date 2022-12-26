@@ -79,11 +79,16 @@
                     </option>
                 </select>
                 <label for="">Mensagens</label>
-                <select name="msg" id="msg">
+                <select name="msg" id="msg" formControlName="idMsg">
                     <option *ngFor="let msg of msgPorCategoria" [value]="msg.id">
                         {{ msg.mensagem }}
                     </option>
                 </select>
+                <input type="button"
+                       value="Excluir"
+                       [disabled]="excluirMsgForm.disabled"
+                       (click)="excluirMsg(excluirMsgForm)"
+                >
             </form>
         </div>
     </div>
